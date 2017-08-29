@@ -1,0 +1,20 @@
+TRABAJO PRACTICO INTEGRADOR : "Ciudad de los niños"
+MATERIA : Base de datos
+CODIGO : 1959
+INTEGRANTES :
+	Gardiola, Joaquin
+	Giachero, Ezequiel
+
+INFORMACION:
+- Base de datos utilizada : MySQL
+- El orden de ejecucion de los scripts .sql es el siguiente:
+	1* create_tables.sql
+	2* create_triggers.sql
+	3* insertions.sql
+- Ejecutar MySQLConnect.sh en linux desde la consola para compilar y ejecutar el programa.
+- Modificar CiudadJoven.java para colocar los datos de la conexion al motor utilizado
+
+CONSULTAS REALIZADAS:
+4- SELECT tipo_doc,doc,nro_casa FROM menores NATURAL JOIN casa;
+5- SELECT tipo_doc,doc FROM menores NATURAL JOIN persona WHERE (created_at >= '2018-01-01 00:00:00' AND created_at <= '2018-12-30 24:00:00');
+6- SELECT tipo_doc,doc,count(nro_visita) FROM menores JOIN visita ON (tipo_doc = tipo_doc_menor and doc = doc_menor) WHERE (fecha_visita >= '2017-08-01' and fecha_visita <= '2017-08-31 24:00:00') GROUP BY(nro_menor);
